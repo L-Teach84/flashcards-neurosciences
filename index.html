@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incoterms Flashcards</title>
+    <title>Neurosciences Flashcards</title>
     <style>
         body {
             display: flex;
@@ -17,8 +17,8 @@
         }
 
         .flashcard {
-            width: 300px;
-            height: 400px;
+            width: 350px;
+            height: 500px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -94,14 +94,14 @@
 <body>
     <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
-            <div class="flashcard-front" data-code="Multi">
+            <div class="flashcard-front" data-code="Capa">
                 <div class="flashcard-content">
-                    <p>Incoterms multimodaux</p>
+                    <p>Plasticité cérébrale</p>
                 </div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-content">
-                    <p><p>EXW</p><p>FCA</p><p>CPT</p><p>CIP</p><p>DAP</p><p>DPU</p><p>DDP</p></p>
+                    <p><p>Capacité du cerveau à remodeler son organisation en intéraction avec les événements que nous vivons.</p>
                 </div>
             </div>
         </div>
@@ -129,54 +129,78 @@
             // Update the text content immediately
             if (flashcardFront) {
                 switch (flashcardFront.getAttribute('data-code').trim()) {
-                    case 'Multi':
-                        ShowEXWCard()
+                    case 'Capa':
+                        ShowNeurogenCard()
                         break;
-                    case 'EXW':
-                        ShowFCACard()
+                    case 'Neurogen':
+                        Show2vitCard()
                         break;
-                    case 'FCA':
-                        ShowCPTCard()
+                    case '2vit':
+                        ShowSyst1Card()
                         break;
-                    case 'CPT':
-                        ShowCIPCard()
+                    case 'Syst1':
+                        ShowSyst2Card()
                         break;
-                    case 'CIP':
-                        ShowDAPCard()
+                    case 'Syst2':
+                        Show8ICard()
                         break;
-                    case 'DAP':
-                        ShowDPUCard()
+                    case '8I':
+                        ShowFiltresCard()
                         break;
-                    case 'DPU':
-                        ShowDDPCard()
+                    case 'Filtres':
+                        ShowMémcourtCard()
                         break;
-                    case 'DDP':
-                        ShowMaritimeCard()
+                    case 'Mémcourt':
+                        ShowMémlongCard()
                         break;
-                    case 'Maritime':
-                        ShowFASCard()
+                    case 'Mémlong':
+                        ShowPhonoCard()
                         break;
-                    case 'FAS':
-                        ShowFOBCard()
+                    case 'Phono':   
+                        ShowCalepinCard()
                         break;
-                    case 'FOB':
-                        ShowCFRCard()
+                    case 'Calepin':
+                        ShowAdminCard()
                         break;
-                    case 'CFR':
-                        ShowCIFCard()
+                    case 'Admin':
+                        ShowMémrepCard()
                         break;
-                    case 'CIF':
-                        ShowMultiCard()
+                    case 'Mémrep':      
+                        ShowMémperCard()
+                        break;
+                    case 'Mémper':
+                        ShowMémsémCard()
+                        break;
+                    case 'Mémsém':
+                        ShowMémépiCard()
+                        break;
+                    case 'Mémépi':
+                        ShowMémactCard()
+                        break;
+                    case 'Mémact':
+                        ShowMémoCard()
+                        break;
+                    case 'Mémo':
+                        ShowEncCard()
+                        break;
+                    case 'Enc':
+                        ShowStockCard()
+                        break;
+                    case 'Stock':
+                        ShowRécupCard()
+                        break;
+                    case 'Récup':
+                        ShowCapaCard()
                         break;
                 }
-            }
+                }
+                }
 
             setTimeout(() => {
                 // Reapply the flipping animation after a short delay
                 flashcardInner.style.transition = 'transform 0.6s';
             }, 300); // Delay to allow the transition to be applied
             
-        }
 
         function goToPreviousFlashcard() {
             const flashcardFront = document.querySelector('.flashcard-front');
@@ -190,160 +214,248 @@
             // Update the text content immediately
             if (flashcardFront) {
                 switch (flashcardFront.getAttribute('data-code').trim()) {
-                    case 'Multi':
-                        ShowCIFCard();
+                    case 'Capa':
+                        ShowRécupCard();
                         break;
-                    case 'EXW':
-                        ShowMultiCard();
+                    case 'Neurogen':
+                        ShowCapaCard();
                         break;
-                    case 'FCA':
-                        ShowEXWCard();
+                    case '2vit':
+                        ShowNeurogenCard()
                         break;
-                    case 'CPT':
-                        ShowFCACard()
+                    case 'Syst1':
+                        Show2vitCard()
                         break;
-                    case 'CIP':
-                        ShowCPTCard()
+                    case 'Syst2':
+                        ShowSyst1Card()
                         break;
-                    case 'DAP':
-                        ShowCIPCard()
+                    case '8I':
+                        ShowSyst2Card()
                         break;
-                    case 'DPU':
-                        ShowDAPCard()
+                    case 'Filtres':
+                        Show8ICard()
                         break;
-                    case 'DDP':
-                        ShowDPUCard()
+                    case 'Mémcourt':
+                        ShowFiltresCard()
                         break;
-                    case 'Maritime':
-                        ShowDDPCard()
+                    case 'Mémlong':
+                        ShowMémcourtCard()
                         break;
-                    case 'FAS':
-                        ShowMaritimeCard()
+                    case 'Phono':
+                        ShowMémlongCard()
                         break;
-                    case 'FOB':
-                        ShowFASCard()
+                    case 'Calepin':
+                        ShowPhonoCard()
                         break;
-                    case 'CFR':
-                        ShowFOBCard()
+                    case 'Admin':
+                        ShowCalepinCard()
                         break;
-                    case 'CIF':
-                        ShowCFRCard()
+                    case 'Mémrep':
+                        ShowAdminCard()
+                        break;
+                    case 'Mémper':
+                        ShowMémrepCard()
+                        break;
+                    case 'Mémsém':
+                        ShowMémperCard()
+                        break;
+                    case 'Mémépi':
+                        ShowMémsémCard()
+                        break;
+                    case 'Mémact':
+                        ShowMémépiCard()
+                        break;
+                    case 'Mémo':
+                        ShowMémactCard()
+                        break;
+                    case 'Enc': 
+                        ShowMémoCard()
+                        break;
+                    case 'Stock':
+                        ShowEncCard()
+                        break;  
+                    case 'Récup':
+                        ShowStockCard()
                         break;
                 }
-            }
+                }
+                }
 
             setTimeout(() => {
                 // Reapply the flipping animation after a short delay
                 flashcardInner.style.transition = 'transform 0.6s';
             }, 300); // Delay to allow the transition to be applied
+
+        function ShowCapaCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Capa');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Capacité cérébrale</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Capacité du cerveau à remodeler son organisation en intéraction avec les événements que nous vivons.</p></div>';
         }
 
-        function ShowMultiCard()
+        function ShowNeurogenCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'Multi');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Incoterms multimodaux</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>EXW</p><p>FCA</p><p>CPT</p><p>CIP</p><p>DAP</p><p>DPU</p><p>DDP</p></div>';
+            flashcardFront.setAttribute('data-code', 'Neurogen');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Neurogénèse</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Capacité du cerveau à générer des nouveaux neurones.</p></div>';
         }
 
-        function ShowEXWCard()
+        function Show2vitCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'EXW');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>EXW</p><p>(Ex-Works)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= Valeur marchandise</p><p>+ Emballage</p></div>';
+            flashcardFront.setAttribute('data-code', '2vit');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Les 2 vitesses du cerveaux</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Système 1</p><p>Système 2</p></div>';
         }
 
-        function ShowFCACard()
+        function ShowSyst1Card()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'FCA');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>FCA</p><p>(Free Carrier)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= EXW</p><p>+ Chargement sur le 1er moyen de transport</p><p>+ Douane export</p><p>+ Pré-acheminement</p></div>';
+            flashcardFront.setAttribute('data-code', 'Syst1');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Caractéristiques du</p><p>système 1</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Rapide</p><p>Automatique</p><p>Associatif</p><p>Inconscient</p></div>';
         }
-
-        function ShowCPTCard()
+        function ShowSyst2Card()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CPT');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CPT</p><p>(Carriage paid to)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= FCA</p><p>+ THC (selon Liner-Terms)</p><p>+ Transport principal</p><p>(fret de base + frais annexes/surcharges)</p></div>';
+            flashcardFront.setAttribute('data-code', 'Syst2');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Caractéristiques du</p><p>sysème 2</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Lent</p><p>Paresseux</p><p>Logique</p><p>Conscient</p></div>';
         }
-        function ShowCIPCard()
+        function Show8ICard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CIP');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CIP</p><p>(Carriage insurance paid to)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= CPT</p><p>+ Assurance</p></div>';
+            flashcardFront.setAttribute('data-code', '8I');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Les 8 intelligences</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>intra-personnelle</p><p>interpersonnelle</p><p>logico-mathématique</p><p>corporelle-kinesthésique</p><p>verbo-linguistique</p><p>musicale-rythmique</p><p>spatiale</p><p>naturaliste-écologiste</p></div>';
         }
-        function ShowDAPCard()
+        function ShowFiltresCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'DAP');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>DAP</p><p>(Delivered at place)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= CIP</p><p>+ THC (selon Liner-Terms)</p><p>+ post-acheminement</p></div>';
+            flashcardFront.setAttribute('data-code', 'Filtres');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>4 filtres de l\'apprentissage</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Attention</p><p>Compréhension</p><p>Mémoire</p><p>Emotions et Motivation</p></div>';
         }
-        function ShowDPUCard()
+        function ShowMémcourtCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'DPU');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>DPU</p><p>(Delivered at place unloaded)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= DAP</p><p>+ Déchargement usine acheteur</p></div>';
+            flashcardFront.setAttribute('data-code', 'Mémcourt');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire à court terme</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Boucle phonologique</p><p>Calepin visuo-spatial</p><p>Administrateur central</p></div>';
         }
-        function ShowDDPCard()
+        function ShowMémlongCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'DDP');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>DDP</p><p>(Delivered duty paid)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= DAP</p><p>+ Liquidation douanière</p><p>+ Honoraires d\'agréé en douane (HAD)</p><p>+ TVA sur HAD</p></div>';
+            flashcardFront.setAttribute('data-code', 'Mémlong');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire à long terme</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Mémoires de représentation</p><p>Mémoires de l\'action</p></div>';
         }
-        function ShowMaritimeCard()
+        function ShowPhonoCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'Maritime');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Incoterms maritimes</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>FAS</p><p>FOB</p><p>CFR</p><p>CIF</p></div>';
+            flashcardFront.setAttribute('data-code', 'Phono');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Boucle phonologique</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Boucle auditive qui utilise le langage pour répéter les données auditives afin de les maintenir en mémoire.</p></div>';
         }
-        function ShowFASCard()
+        function ShowCalepinCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'FAS');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>FAS</p><p>(Free Alongside Ship)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= EXW</p><p>+ Chargement sur le 1er moyen de transport</p><p>+ Douane export</p><p>+ Approche du port</p></div>';
+            flashcardFront.setAttribute('data-code', 'Calepin');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Calepin visuo-spatial</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Boucle visuelle qui utilise les images mentales pour faciliter la mémorisation à court terme.</p></div>';
         }
-        function ShowFOBCard()
+        function ShowAdminCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'FOB');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>FOB</p><p>(Free On Board)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= FAS</p><p>+ Chargement à bord du navire</p><p>(voir Liner-Terms)</p></div>';
+            flashcardFront.setAttribute('data-code', 'Admin');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Administrateur central</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Arbitre qui sélectionne les actions les plus efficaces en fonction de la tâche à effectuer et qui les coordonne.</p></div>';
         }
-        function ShowCFRCard()
+        function ShowMémrepCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CFR');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CFR</p><p>(Cost & Freight)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= FOB</p><p>+ Transport principal</p><p>(fret de base + surcharges)</p></div>';
+            flashcardFront.setAttribute('data-code', 'Mémrep');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoires de représentation</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Mémoire perceptive</p><p>Mémoire sémantique</p><p>Mémoire épisodique</p></div>';
         }
-        function ShowCIFCard()
+        function ShowMémperCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CIF');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CIF</p><p>(Cost, Insurance & Freight)</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= CFR</p><p>+ Assurance</p></div>';
+            flashcardFront.setAttribute('data-code', 'Mémper');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire perceptive</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Mémoire des éléments perçus par nos sens.</p></div>';
+        }
+        function ShowMémsémCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Mémsém');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire sémantique</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Mémoire des connaissances, des significations et des concepts.</p></div>';
+        }
+        function ShowMémépiCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Mémépi');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire épisodique</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Mémoire des événements passés.</p></div>';
+        }
+        function ShowMémactCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Mémact');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Mémoire de l\'action</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Dite mémoire procédurale.</p><p>Elle englobe les habilités motrices, les savoir-faire et les procédures.</p></div>';
+        }
+        function ShowMémoCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Mémo');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>3 phases de la mémorisation</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Encodage</p><p>Stockage</p><p>Récupération</p></div>';
+        }
+        function ShowEncCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Enc');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Encodage</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Filtre et faible capacité</p><p>Acquisition de nouvelles connaissances</p></div>';
+        }
+        function ShowStockCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Stock');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Stockage</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Stockage à grande capacité</p><p>Rétention de l\'information</p></div>';
+        }
+        function ShowRécupCard()
+        {
+            const flashcardFront = document.querySelector('.flashcard-front');
+            const flashcardBack = document.querySelector('.flashcard-back');
+            flashcardFront.setAttribute('data-code', 'Récup');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Récupération</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Restitution à faible capacité</p><p>Rappel de l\'information  à la conscience</p></div>';
         }
     </script>
 </body>
